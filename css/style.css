@@ -1,0 +1,254 @@
+/* 3 Warna Utama:
+   1. #2C1810 (Coklat kopi tua: header, teks utama, tombol)
+   2. #FBF7F2 (Krem susu: latar halaman & card)
+   3. #B86B35 (Karamel: aksen harga, border aktif, hover)
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #FBF7F2;
+  color: #2C1810;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* Header & Navigasi (Mobile First: tersusun ke bawah) */
+.site-header {
+  background-color: #2C1810;
+  color: #FBF7F2;
+}
+
+.nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.brand {
+  color: #FBF7F2;
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  color: #FBF7F2;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-list a:hover {
+  color: #E5A975;
+  border-bottom-color: #E5A975;
+}
+
+/* Beranda (index.html) */
+.home-section {
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.hours-list {
+  padding-left: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+.hours-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Menu Card & Grid (menu.html - Mobile First: 1 kolom) */
+.menu-category {
+  margin-bottom: 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.menu-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E6D8C8;
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.menu-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #2C1810;
+}
+
+.menu-desc {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.menu-price {
+  margin: auto 0 0;
+  padding-top: 0.5rem;
+  font-weight: 700;
+  color: #B86B35;
+}
+
+/* Form Pemesanan (pesan.html) */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 600px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #2C1810;
+  background-color: #FFFFFF;
+  border: 1.5px solid #C8B49E;
+  border-radius: 8px;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #B86B35;
+  box-shadow: 0 0 0 3px rgba(184, 107, 53, 0.25);
+}
+
+.radio-group {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  background-color: #FFFFFF;
+  border: 1.5px solid #C8B49E;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.radio-group legend {
+  padding: 0 0.35rem;
+  font-weight: 600;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-submit {
+  align-self: flex-start;
+  background-color: #2C1810;
+  color: #FBF7F2;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-submit:hover {
+  background-color: #B86B35;
+}
+
+.btn-submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 107, 53, 0.35);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 2.5rem;
+  border-top: 1px solid #E6D8C8;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* Tablet & Desktop: mulai lebar 600px */
+@media (min-width: 600px) {
+  .nav-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Lebar: mulai lebar 960px */
+@media (min-width: 960px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

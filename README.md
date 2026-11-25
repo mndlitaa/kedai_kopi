@@ -1,0 +1,17 @@
+https://github.com/mndlitaa/kedai_kopi/
+
+## Minggu 2
+## a. Apa yang muncul di address bar setelah form dikirim, dan mengapa data form tampil di sana? Hubungkan dengan materi method HTTP di Minggu 1
+Setelah tombol Kirim ditekan, address bar akan berubah dan menambahkan tanda tanya di akhir alamat halaman, lalu diikuti pasangan `name` dan nilai yang tadi diinput user (dipisah tanda `&`), misalnya jadi `pesan.html?nama=Rina&wa=081234567890&menu=americano&jumlah=1&cara_ambil=Ambil+di+tempat&catatan=`. Data tersebut muncul di address bar karena di form dipakai `method="get"`. Di materi Minggu 1 soal HTTP, method `GET` mengirim parameter lewat URL saat browser melakukan request ke tujuan yang diatur. Karena menempel langsung di URL, isinya akan terlihat di address bar dan bisa ikut tersimpan di history browser. 
+
+## b. Pilih satu bagian halamanmu yang memakai element semantic. Mengapa kamu memilih element itu dan bukan <div>?
+Saya memilih `<nav>` untuk bagian daftar link pindah halaman (`Beranda`, `Menu`, dan `Pesan`) di dalam `<header>`. Alasannya, `<nav>` langsung menunjukkan kalau blok itu memang khusus untuk navigasi halaman. Jika pakai `<div>`, secara tampilan mungkin sama saja, tapi `<div>` itu hanya pembungkus kosong yang tidak mempunyai arti khusus, sehingga ketika membuka struktur di tab Elements, akan membuat bingung karena harus menebak dulu `<div>` itu buat apa, screen reader tidak langsung mengetahui bahwa itu menu navigasi.
+
+
+## Minggu 3
+## a. Sebutkan satu bagian yang kamu susun dengan Flexbox dan satu bagian dengan Grid. Mengapa pilihan itu cocok untuk kedua bagian tersebut?
+Bagian navigasi pada header karena Flexbox dirancang untuk tata letak satu dimensi (satu baris atau satu kolom). Lalu, pada bagian header, elemen yang diatur hanya terdiri dari satu baris di layar lebar serta satu kolom vertikal di layar ponsel. Dengan Flexbox, pengaturan arah dan jarak antar tautan menjadi ringkas dan fleksibel mengikuti ukuran layar.
+Bagian daftar kartu menu pada halaman menu.html karena CSS Grid dirancang untuk tata letak dua dimensi. Daftar menu membutuhkan susunan kartu yang sejajar rapi secara horizontal maupun vertikal dengan lebar kolom yang konsisten, serta mudah diubah jumlah kolomnya menggunakan media query.
+
+## b. Ceritakan satu aturan CSS yang awalnya tidak berlaku. Apa yang kamu lihat di panel Styles, dan bagaimana kamu memperbaikinya?
+Pada awalnya, properti `width: 100%` dan `max-width: 400px` yang ditulis pada selector `img` tidak mengubah ukuran gambar `kedai.jpg` di halaman utama, atau gambar tetap melebar melebihi layar kecil. Saat elemen `<img>` diperiksa melalui tab Elements di panel Styles, aturan lebar dari CSS terlihat tercoret atau kalah prioritas karena pada tag `<img src="img/kedai.jpg" ... width="400">` masih terdapat atribut HTML `width="400"`, atau selector elemen `img` tertimpa oleh aturan lain dengan specificity lebih tinggi. Oleh karena itu, saya menambahkan class khusus `.hero-img` pada elemen `<img>` di `index.html` dan mendefinisikan `width: 100%; max-width: 400px; height: auto;` pada `.hero-img` di `style.css` sehingga aturan CSS memiliki specificity yang lebih jelas dan gambar dapat menyesuaikan lebar layar secara responsif tanpa menimbulkan horizontal scroll.

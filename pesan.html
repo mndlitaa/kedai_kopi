@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan - Kopi Gaul</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand">Kopi Gaul</a>
+      <nav aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="pesan.html">Pesan</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Form Pemesanan</h2>
+
+    <form action="pesan.html" method="get" class="order-form">
+      <div class="form-field">
+        <label for="nama">Nama pemesan</label>
+        <input type="text" id="nama" name="nama" required>
+      </div>
+
+      <div class="form-field">
+        <label for="wa">Nomor WhatsApp</label>
+        <input type="tel" id="wa" name="wa" required>
+      </div>
+
+      <div class="form-field">
+        <label for="menu">Pilihan menu</label>
+        <select id="menu" name="menu">
+          <option value="kopi-susu-gula-aren">Kopi Susu Gula Aren - Rp15.000</option>
+          <option value="americano">Americano - Rp12.000</option>
+          <option value="caffe-latte">Caffe Latte - Rp17.000</option>
+          <option value="matcha-latte">Matcha Latte - Rp18.000</option>
+          <option value="cokelat-klasik">Cokelat Klasik - Rp16.000</option>
+          <option value="lychee-tea">Lychee Tea - Rp13.000</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="jumlah">Jumlah</label>
+        <input type="number" id="jumlah" name="jumlah" min="1" max="10" value="1" required>
+      </div>
+
+      <fieldset class="radio-group">
+        <legend>Cara ambil</legend>
+        <label class="radio-option" for="ambil-di-tempat">
+          <input type="radio" id="ambil-di-tempat" name="cara_ambil" value="Ambil di tempat" checked>
+          <span>Ambil di tempat</span>
+        </label>
+
+        <label class="radio-option" for="diantar">
+          <input type="radio" id="diantar" name="cara_ambil" value="Diantar">
+          <span>Diantar</span>
+        </label>
+      </fieldset>
+
+      <div class="form-field">
+        <label for="catatan">Catatan</label>
+        <textarea id="catatan" name="catatan" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Kirim</button>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Alamat: Jl. Gondang No. 14, Tembalang, Semarang</p>
+      <p>Jam buka: Senin - Sabtu, 08.00 - 23.00 WIB</p>
+    </div>
+  </footer>
+
+</body>
+</html>
