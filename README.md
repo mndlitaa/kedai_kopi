@@ -1,4 +1,4 @@
-https://github.com/mndlitaa/kedai_kopi/
+[https://github.com/mndlitaa/kedai_kopi/](https://mndlitaa.github.io/kedai_kopi/)
 
 ## Minggu 2
 ## a. Apa yang muncul di address bar setelah form dikirim, dan mengapa data form tampil di sana? Hubungkan dengan materi method HTTP di Minggu 1
